@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +30,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         h1 {
@@ -38,7 +44,7 @@
             color: var(--primary-color);
             font-size: 2.8em;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
             padding-bottom: 15px;
         }
@@ -67,7 +73,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
             text-align: center;
         }
@@ -95,7 +101,7 @@
             border-radius: 15px;
             padding: 40px;
             margin: 30px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             max-width: 1000px;
         }
 
@@ -149,7 +155,7 @@
             border-radius: 15px;
             margin: 40px auto;
             display: block;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
 
@@ -163,7 +169,7 @@
             margin-top: 50px;
             background-color: white;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
@@ -175,33 +181,41 @@
             .container {
                 padding: 15px;
             }
-            
+
             h1 {
                 font-size: 2.2em;
             }
-            
+
             .description {
                 font-size: 1.1em;
             }
-            
+
             .nav-menu {
                 padding: 15px;
             }
-            
+
             .nav-menu a {
                 padding: 10px 15px;
                 font-size: 0.9em;
             }
-            
+
             .content-section {
                 padding: 20px;
             }
-            
+
             .info-table th,
             .info-table td {
                 padding: 12px 15px;
                 font-size: 0.9em;
             }
+        }
+        canvas {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -210,7 +224,7 @@
     <div class="container">
         <h1>Thông tin lớp học</h1>
         <p class="description">Lớp 12A7 là một lớp thuộc khối tự nhiên 1 của trường THPT Chu Văn An</p>
-        
+
         <nav class="nav-menu">
             <a href="index.html">Trang chủ</a>
             <a href="review.html">Giới thiệu</a>
@@ -222,7 +236,8 @@
 
         <div class="content-section" align="center">
             <h2>Bài tập được làm bởi Nguyễn Thị Phương Nhi, thành viên tổ 1, lớp 12A7, trường THPT Chu Văn An.
-            <br>Bài tập được thiết kế dựa trên yêu cầu bài tập của thầy Nghiêm.</h2>
+                <br>Bài tập được thiết kế dựa trên yêu cầu bài tập của thầy Nghiêm.
+            </h2>
         </div>
 
         <footer>
@@ -230,5 +245,79 @@
             <p>Website được thiết kế bởi Phương Nhi lớp 12A7</p>
         </footer>
     </div>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Thiết lập kích thước canvas theo cửa sổ
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Tải ảnh hoa (đường dẫn cần thay đổi theo file của bạn)
+        const flowerImg = new Image();
+        flowerImg.src = "flower.png";
+
+        const flowers = [];
+        const numberOfFlowers = 50; // Số lượng hoa trên màn hình
+
+        // Khởi tạo mảng hoa với các thuộc tính ngẫu nhiên
+        for (let i = 0; i < numberOfFlowers; i++) {
+            flowers.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                speed: Math.random() * 2 + 1,
+                size: Math.random() * 20 + 20,
+                opacity: Math.random() * 0.5 + 0.5,
+                angle: Math.random() * Math.PI * 2
+            });
+        }
+
+        // Hàm vẽ hoa
+        function drawFlowers() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            flowers.forEach(flower => {
+                ctx.save();
+                ctx.globalAlpha = flower.opacity;
+                // Dịch chuyển và xoay theo góc của hoa
+                ctx.translate(flower.x, flower.y);
+                ctx.rotate(flower.angle);
+                ctx.drawImage(
+                    flowerImg,
+                    -flower.size / 2,
+                    -flower.size / 2,
+                    flower.size,
+                    flower.size
+                );
+                ctx.restore();
+
+                // Cập nhật vị trí hoa
+                flower.y += flower.speed;
+                // Tạo chuyển động ngang nhẹ bằng hàm sin (giả lập gió nhẹ)
+                flower.x += Math.sin(flower.y / 50);
+                // Cập nhật góc quay (tùy chọn)
+                flower.angle += 0.01;
+
+                // Nếu hoa rơi ra ngoài dưới màn hình, reset vị trí ở đầu
+                if (flower.y > canvas.height) {
+                    flower.y = -flower.size;
+                    flower.x = Math.random() * canvas.width;
+                }
+            });
+
+            requestAnimationFrame(drawFlowers);
+        }
+
+        // Chạy hiệu ứng sau khi ảnh hoa đã được tải xong
+        flowerImg.onload = drawFlowers;
+
+        // Cập nhật kích thước canvas khi thay đổi kích thước cửa sổ
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
 </body>
+
 </html>
