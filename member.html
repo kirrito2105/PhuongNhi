@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lớp 12A7</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --accent-color: #2c3e50;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .nav-menu {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            text-decoration: none;
+            color: var(--accent-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 1000px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.2em;
+            position: relative;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-table td {
+            background-color: white;
+        }
+
+        .info-table tr:nth-child(even) td {
+            background-color: #f8f9fa;
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .info-table tr {
+            transition: all 0.3s ease;
+        }
+
+        .info-table tr:hover td {
+            background-color: #e9f0f7;
+            transform: scale(1.01);
+        }
+
+        .info-table td:first-child {
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 80px;
+        }
+
+        .class-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 15px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .class-image:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .description {
+                font-size: 1.1em;
+            }
+            
+            .nav-menu {
+                padding: 15px;
+            }
+            
+            .nav-menu a {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .info-table th,
+            .info-table td {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thông tin lớp học</h1>
+        <p class="description">Lớp 12A7 là một lớp thuộc khối tự nhiên 1 của trường THPT Chu Văn An</p>
+        
+        <nav class="nav-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="review.html">Giới thiệu</a>
+            <a href="member.html">Thành viên</a>
+            <a href="vannghe.html">Văn nghệ</a>
+            <a href="hoithao.html">Hội thao</a>
+            <a href="dacbiet.html">Đặc biệt</a>
+        </nav>
+        <div class="content-section">
+            <h2>Danh Sách Học Sinh</h2>
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và Tên</th>
+                        <th>Ngày Sinh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>HUỲNH QUỐC ANH</td><td>28/04/2007</td></tr>
+                    <tr><td>2</td><td>NGUYỄN THỊ KIM ANH</td><td>10/12/2007</td></tr>
+                    <tr><td>3</td><td>PHAN NGUYỄN PHƯƠNG ANH</td><td>07/03/2007</td></tr>
+                    <tr><td>4</td><td>PHAN TRUNG BẠC</td><td>01/01/2007</td></tr>
+                    <tr><td>5</td><td>NGUYỄN CÔNG DANH</td><td>19/04/2007</td></tr>
+                    <tr><td>6</td><td>BÙI KHÁNH DÂN</td><td>12/11/2007</td></tr>
+                    <tr><td>7</td><td>PHẠM TUẤN DUY</td><td>09/05/2007</td></tr>
+                    <tr><td>8</td><td>LÂM HẢI DUYÊN</td><td>08/03/2007</td></tr>
+                    <tr><td>9</td><td>NGUYỄN THÀNH ĐẠT</td><td>03/02/2007</td></tr>
+                    <tr><td>10</td><td>BÙI THỊ NGỌC HÂN</td><td>12/03/2007</td></tr>
+                    <tr><td>11</td><td>TRẦN THỊ NGỌC HIỀN</td><td>23/08/2007</td></tr>
+                    <tr><td>12</td><td>NGUYỄN CAO MỸ HOA</td><td>13/01/2007</td></tr>
+                    <tr><td>13</td><td>HUỲNH QUÁCH HUY</td><td>12/05/2007</td></tr>
+                    <tr><td>14</td><td>NGUYỄN THỊ BÍCH HUYỀN</td><td>01/01/2007</td></tr>
+                    <tr><td>15</td><td>QUÁCH GIA HỶ</td><td>12/09/2007</td></tr>
+                    <tr><td>16</td><td>NGUYỄN LẠ VĨNH KHANG</td><td>12/04/2007</td></tr>
+                    <tr><td>17</td><td>QUÁCH GIA KHANG</td><td>24/07/2007</td></tr>
+                    <tr><td>18</td><td>ĐỖ HUỲNH ANH KIỆT</td><td>31/12/2007</td></tr>
+                    <tr><td>19</td><td>NGUYỄN NGỌC BẰNG LONG</td><td>31/12/2007</td></tr>
+                    <tr><td>20</td><td>HUỲNH HỮU MINH</td><td>14/01/2007</td></tr>
+                    <tr><td>21</td><td>PHAN VÕ XUÂN MINH</td><td>11/01/2007</td></tr><tr><td>22</td><td>TÂN NGHI</td><td>04/06/2007</td></tr>
+                    <tr><td>23</td><td>NGUYỄN THỊ KHẢ NHI</td><td>08/06/2007</td></tr>
+                    <tr><td>24</td><td>TRẦN THỊ PHƯƠNG NHI</td><td>21/03/2007</td></tr>
+                    <tr><td>25</td><td>VÕ THỊ YẾN NHI</td><td>29/10/2007</td></tr><tr><td>26</td><td>LÂM THIÊN NHƯ</td><td>07/09/2007</td></tr><tr><td>27</td><td>TĂNG THỊ HUỲNH NHƯ</td><td>04/09/2007</td></tr>
+                    <tr><td>28</td><td>NGUYỄN TẤN PHÁT</td><td>12/03/2007</td></tr>
+                    <tr><td>29</td><td>NGUYỄN TRƯƠNG THIÊN PHÚC</td><td>17/01/2007</td></tr><tr><td>30</td><td>LÂM HOÀNG THIÊN</td><td>05/07/2007</td></tr>
+                    <tr><td>31</td><td>LÊ MINH THƯ</td><td>07/09/2007</td></tr>
+                    <tr><td>32</td><td>LÊ NGUYỄN ANH THƯ</td><td>21/06/2007</td></tr>
+                    <tr><td>33</td><td>VÕ TẤN TIẾN</td><td>27/12/2007</td></tr>
+                    <tr><td>34</td><td>NGUYỄN LÊ HUYỀN TRÂM</td><td>18/04/2007</td></tr>
+                    <tr><td>35</td><td>NGUYỄN THỊ BÍCH TRÂM</td><td>17/10/2007</td></tr>
+                    <tr><td>36</td><td>LÊ THỊ KIỀU TRINH</td><td>23/05/2007</td></tr>
+                    <tr><td>37</td><td>PHAN TRUNG TỶ</td><td>01/01/2007</td></tr>
+                    <tr><td>38</td><td>PHAN ÁNH TUYẾT</td><td>04/09/2007</td></tr><tr><td>39</td><td>TRƯƠNG PHẠM PHI TUYẾT</td><td>10/04/2007</td></tr>
+                    <tr><td>40</td><td>LÊ BẢO VY</td><td>09/05/2007</td></tr>
+                    <tr><td>41</td><td>LÊ TUYẾT VY</td><td>09/05/2007</td></tr><tr><td>42</td><td>NGUYỄN THỊ NHƯ Ý</td><td>29/03/2007</td></tr>
+                    <tr><td>43</td><td>LÊ NGUYỄN PHI YẾN</td><td>05/02/2007</td></tr>
+                    <tr><td>44</td><td>TỐNG NGUYỄN HẢI YẾN</td><td>13/02/2007</td></tr>
+                </tbody>
+            </table>
+            <img src="https://sv1.anhsieuviet.com/2025/02/19/Messenger_creation_EB663F96-E6DE-4FD4-9DF2-BDDCDC5B2C68.jpg" alt="Class Photo" width="100%" height="auto">
+        </div>
+        <footer>
+            <p>© 2024 Lớp 12A7 - THPT Chu Văn An</p>
+            <p>Website được thiết kế bởi Phương Nhi lớp 12A7</p>
+        </footer>
+    </div>
+</body>
+</html>

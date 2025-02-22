@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lớp 12A7</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --accent-color: #2c3e50;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .nav-menu {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 5px;
+            text-decoration: none;
+            color: var(--accent-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.2em;
+            position: relative;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .info-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .info-table tr {
+            transition: all 0.3s ease;
+        }
+
+        .info-table tr:hover {
+            background-color: #e9f0f7;
+            transform: scale(1.01);
+        }
+
+        .class-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 15px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .class-image:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .description {
+                font-size: 1.1em;
+            }
+
+            .nav-menu {
+                padding: 15px;
+            }
+
+            .nav-menu a {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .info-table th,
+            .info-table td {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thông tin lớp học</h1>
+        <p class="description">Lớp 12A7 là một lớp thuộc khối tự nhiên 1 của trường THPT Chu Văn An</p>
+
+        <nav class="nav-menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="review.html">Giới thiệu</a>
+            <a href="member.html">Thành viên</a>
+            <a href="vannghe.html">Văn nghệ</a>
+            <a href="hoithao.html">Hội thao</a>
+            <a href="dacbiet.html">Đặc biệt</a>
+        </nav>
+
+        <div class="content-section" align="center">
+            &nbsp; &nbsp;
+            <meta charset="UTF-8"> &nbsp; &nbsp;
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> &nbsp; &nbsp;<title>Hội Thao Lớp
+                12A7</title> &nbsp; &nbsp; &nbsp; &nbsp;<h2>Hội Thao của Lớp 12A7</h2> &nbsp; &nbsp;<p> &nbsp; &nbsp;
+                &nbsp; Hằng năm, nhà
+                trường tổ chức hội thao nhằm khuyến khích học sinh rèn luyện thể chất, nâng cao sức khỏe và tinh
+                thần đồng đội. &nbsp; &nbsp; &nbsp; &nbsp; Đây là dịp để học sinh tham gia vào các môn thể thao như
+                bóng đá, bóng chuyền, cầu lông, chạy tiếp sức và nhiều hoạt động thú vị khác. &nbsp; &nbsp;</p>
+            &nbsp; &nbsp;<p> &nbsp; &nbsp; &nbsp; Lớp 12A7 luôn tích cực hưởng ứng các phong trào thể dục thể thao
+                và đạt được nhiều thành tích xuất sắc. </p> &nbsp; &nbsp;<h3>Một số hình ảnh về hội thao của lớp:
+            </h3> &nbsp; &nbsp;<div class="gallery"> &nbsp; &nbsp; &nbsp; &nbsp;<img
+                    src="https://sv1.anhsieuviet.com/2025/02/19/Messenger_creation_F788FC0B-35DB-4BDA-9059-37EA03927723.jpg"
+                    alt="Messenger_creation_F788FC0B-35DB-4BDA-9059-37EA03927723.jpg" width="100%" height="100%"
+                    border="0">&nbsp; &nbsp; &nbsp;<img
+                    src="https://sv1.anhsieuviet.com/2025/02/19/Messenger_creation_AD5B7527-8AC3-4287-BCAC-640109C73C57.jpg"
+                    alt="Messenger_creation_AD5B7527-8AC3-4287-BCAC-640109C73C57.jpg" width="100%" height="100%"
+                    border="0"><img src="https://sv1.anhsieuviet.com/2025/02/19/IMG_20250219_144142.jpg"
+                    alt="IMG_20250219_144142.jpg" width="100%" height="100%" border="0">
+                <img src="https://sv1.anhsieuviet.com/2025/02/19/IMG_20250219_144141-1.jpg"
+                    alt="IMG_20250219_144141-1.jpg" width="100%" height="100%" border="0">
+                <img src="https://sv1.anhsieuviet.com/2025/02/19/IMG_20250219_144141.jpg" alt="IMG_20250219_144141.jpg"
+                    width="100%" height="100%" border="0">
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Lớp 12A7 - THPT Chu Văn An</p>
+            <p>Website được thiết kế bởi Phương Nhi lớp 12A7</p>
+        </footer>
+    </div>
+</body>
+
+</html>
